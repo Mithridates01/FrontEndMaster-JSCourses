@@ -1,3 +1,5 @@
+(function() {
+	
 A();
 
 function C() {
@@ -53,7 +55,7 @@ function F() {
 
 function K() { 
 	var rest = "KLMNOPQRSTUVWXYZ".split("");
-	
+
 	for (var i=0; i<rest.length; i++) {
 		(function(i){
 			// define the current function
@@ -80,3 +82,4 @@ function C () {
 	D();
 };
 
+})()
