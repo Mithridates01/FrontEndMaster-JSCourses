@@ -1,9 +1,9 @@
 (function() {
-	
+
 A();
 
 function C() {
-	// console.log("OOPS!");
+	console.log("OOPS!");
 	C();
 }
 
@@ -77,7 +77,7 @@ function J() {
 	};
 };
 
-function C () {
+function C() {
 	console.log("C");
 	D();
 };
