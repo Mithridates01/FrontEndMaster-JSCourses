@@ -1,16 +1,17 @@
 A();
 
 function C() {
-	console.log("OOPS!");
+	// console.log("OOPS!");
+	C();
 }
 
 function E(f) {
 	console.log("E");
+	// var f = F;
 	f();
-	var f = F;
 }
 
-var A = function() {
+function A() {
 	console.log("A");
 	B();
 };
@@ -21,56 +22,60 @@ function G() {
 	console.log("G");
 	H();
 
-	var H = function() {
+	function H() {
 		console.log("H");
 		I();
 	};
 }
 
-var D = d;
+// var D = d();
 
-function d() {
+function D() {
 	console.log("D");
-	E();
+	E(F);
 }
 
 function I() {
 	console.log("I");
 	J();
-	J();
+	K();
 }
 
-B = function() {
+function B() {
 	console.log("B");
 	C();
 };
 
-var F = function() {
+function F() {
 	console.log("F");
 	G();
 };
 
-var rest = "KLMNOPQRSTUVWXYZ".split("");
-for (var i=0; i<rest.length; i++) {
-	(function(i){
-		// define the current function
-		window[rest[i]] = function() {
-			console.log(rest[i]);
-			if (i < (rest.length-1)) {
-				// TODO: call the next function
-			}
-		};
-	})(i);
+function K() { 
+	var rest = "KLMNOPQRSTUVWXYZ".split("");
+	
+	for (var i=0; i<rest.length; i++) {
+		(function(i){
+			// define the current function
+			window[rest[i]] = function() {
+				console.log(rest[i]);
+				if (i < (rest.length-1)) {
+					// TODO: call the next function
+				}
+			};
+		})(i);
+	}
 }
 
-var J = function() {
+
+function J() {
 	J = function() {
 		console.log("J");
 		K();
 	};
 };
 
-C = function() {
+function C () {
 	console.log("C");
 	D();
 };
