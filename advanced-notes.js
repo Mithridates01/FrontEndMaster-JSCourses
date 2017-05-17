@@ -129,9 +129,12 @@
   --Closure--
     - When a function remembers its lexical scope even when
     the function is outside of that lexical scope
-    
+    *** come back to later *** don't understand
 
 
   --Prototypes--
+
+  --Callbacks--
+    
 */
 
